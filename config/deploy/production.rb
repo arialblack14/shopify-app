@@ -59,3 +59,37 @@
 #     auth_methods: %w(publickey password)
 #     # password: "please use keys"
 #   }
+
+
+# role :app, %w{root@209.97.136.19}
+# role :web, %w{root@209.97.136.19}
+# role :db,  %w{root@209.97.136.19}
+
+# server '209.97.136.19', users: 'root', roles: %w{web app}, my_property: :my_value
+# set :default_shell, "/bin/bash -l"
+
+# server '209.97.136.19',
+#        user: 'root',
+#        roles: %w{web app db},
+#        ssh_options: {
+#            user: 'root', # overrides user setting above
+#            forward_agent: true,
+#            auth_methods: %w(publickey)
+#        }
+# namespace :paths do
+#   desc "Link paths of required files"
+#   task :link_paths do
+#     #run "ln -sf #{shared_path}/database.yml #{release_path}/config/database.yml"
+#     run "ln -sf #{shared_path}/uploads #{release_path}/public/uploads"
+#   end
+# end
+
+# after 'deploy:publishing', 'deploy:restart'
+# namespace :deploy do
+#   task :restart do
+#     on roles(:app) do
+#       execute "cd #{current_path} && /usr/local/rvm/bin/rvm use 2.3.6-p0@cc-appointment do /etc/init.d/unicorn stop"
+#       execute "cd #{current_path} && /usr/local/rvm/bin/rvm use 2.3.6-p0@cc-appointment do /etc/init.d/unicorn start"
+#     end
+#   end
+# end
