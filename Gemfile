@@ -46,3 +46,21 @@ group :development do
 end
 
 gem 'shopify_app'
+
+
+group :development do
+    gem 'capistrano',         require: false
+    gem 'capistrano-rvm',     require: false
+    gem 'capistrano-rails',   require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano3-puma',   require: false
+end
+
+
+# gem 'capistrano', '~> 3.2.0'
+# gem 'capistrano-rvm' , '~> 0.1.1'
+# gem 'capistrano-bundler', '~> 1.1.2'
+# gem 'capistrano-rails', '~> 1.1'
+# gem 'capistrano-sidekiq' , github: 'seuros/capistrano-sidekiq'
+
+gem 'puma'
